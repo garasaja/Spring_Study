@@ -1,0 +1,33 @@
+package com.cos.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.cos.hello.Test2;
+
+
+@Controller
+public class IndexController {
+
+	@Autowired
+	Test t;
+	
+	@Autowired
+	Test2 t2;
+	
+	// http://localhost:8080/
+	@GetMapping({"","/"})
+	public @ResponseBody String index() {
+		
+		System.out.println(t.num);
+		return "헬로"; //viewResolver
+		
+	}
+	
+	@GetMapping({"/user"})
+	public @ResponseBody String user() {
+		return "유저"; //viewResolver
+	}
+}

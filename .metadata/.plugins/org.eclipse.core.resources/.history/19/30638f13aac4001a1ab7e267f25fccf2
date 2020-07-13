@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>index.mustache파일입니다.</h1><!--뿌리는 용도만 협업이 힘듬  -->
+<h2>{{name}}</h2>
+</body>
+</html>

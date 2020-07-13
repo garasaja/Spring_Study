@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>컬렉션</h1>
+{{members}}
+<hr/>
+{{#members}}
+	<h2>{{id}}</h2>
+	<h2>{{username}}</h2>
+	<h2>{{phone}}</h2>
+	<hr/>
+{{/members}}
+</body>
+</html>

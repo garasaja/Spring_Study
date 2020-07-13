@@ -1,0 +1,54 @@
+package com.cos.viewresolver;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class IndexController {
+
+	@GetMapping({"","/"})
+	public  String index(Model model) {
+		String name = "cos";
+		int num = 10;
+		String password = "1234";
+		model.addAttribute("name", name);
+		model.addAttribute("num", num);
+		model.addAttribute("password", password);
+		// viewresolver/src/main/resources/templates/index.mustache
+		// 파일 확장자 없이 이름만 리턴하면됨
+		return "index";
+	}
+	
+	@GetMapping("/model/data")
+	public String modelData(Model model) { // DI하기
+		Member member = Member.builder()
+				.id(1)
+				.username("ssar")
+				.phone("01012345678")
+				.build();
+		
+		model.addAttribute("member", member);
+		return "modelData";
+	}
+	
+	@GetMapping("/model/array")
+	public String modelArray(Model model) {
+		Member member1 = Member.builder()
+				.id(1)
+				.username("cos")
+				.phone("01023456789")
+				.build();
+		
+		List<Member> members = new ArrayList<>();
+		members.add(member1);
+		
+		model.addAttribute("members",members);
+		return "modelArray";
+			}
+	
+}

@@ -1,0 +1,17 @@
+package com.cos.viewresolver;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class IndexController {
+
+	@GetMapping({"","/"})
+	public  String index() {
+		
+		// viewresolver/src/main/resources/templates/index.mustache
+		// 파일 확장자 없이 이름만 리턴하면됨
+		return "index";
+	}
+}

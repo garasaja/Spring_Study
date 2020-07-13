@@ -1,0 +1,8 @@
+package com.cos.hello;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Test2 {
+	int num = 20;
+}
