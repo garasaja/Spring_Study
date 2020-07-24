@@ -1,5 +1,0 @@
-package com.cos.demo;
-
-public class Test {
-	int num = 10;
-}

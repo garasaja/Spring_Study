@@ -13,6 +13,11 @@ public class IndexController {
 	@Autowired
 	Test t;
 
+	@GetMapping("/index")
+	public String home() {
+		return "index";
+	}
+		
 	// http://localhost:8080/
 	@GetMapping({ "", "/" })
 	public @ResponseBody String index() {
